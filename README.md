@@ -1,4 +1,4 @@
-# TRAVEL APP
+# TRAVEL APP - WIP
 
 This app allows users to create their own profiles and organize their saved locations on Google Maps by creating folders.
 
