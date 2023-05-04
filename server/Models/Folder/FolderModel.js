@@ -26,6 +26,11 @@ const folderSchema = new mongoose.Schema({
     }
 })
 
+folderSchema.methods.toJSON = function () {
+    const obj = this.toObject();
+    return { id: obj._id, name: obj.name };
+};
+
 const Folder = mongoose.model("Folder", folderSchema);
 
 module.exports = Folder;

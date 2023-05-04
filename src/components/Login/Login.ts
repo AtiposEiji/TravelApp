@@ -1,7 +1,7 @@
 import { defineComponent, ref } from "vue";
 import InputText from "primevue/inputtext";
 import { Skeletor } from "vue-skeletor";
-import { GetLogin } from "../../services/LoginService";
+import { UserLogin } from "../../services/LoginService";
 import { router } from "../../routes";
 import Cookies from "js-cookie";
 
@@ -25,7 +25,7 @@ export default defineComponent({
 
     const submitForm = async () => {
       formData = JSON.parse(JSON.stringify(formData.value));
-      const response = await GetLogin(formData);
+      const response = await UserLogin(formData);
       if (response.status === 200) {
         const token = response.data.token;
         Cookies.set("authToken", `${token}`);

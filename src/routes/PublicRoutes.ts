@@ -1,6 +1,7 @@
 import { RouteRecordRaw } from "vue-router";
 import NotFound from "../components/NotFound/index.vue";
 import Login from "../components/Login/index.vue";
+import Dashboard from "../views/Dashboard/index.vue";
 
 export const PublicRoutes: Array<RouteRecordRaw> = [
     {
@@ -23,6 +24,11 @@ export const PublicRoutes: Array<RouteRecordRaw> = [
         path: '/login',
         component: Login,
         name: 'Login'
+    },
+    {
+        path: '/dashboard',
+        component: Dashboard,
+        name: 'Dashboard'
     }
 ]
 
