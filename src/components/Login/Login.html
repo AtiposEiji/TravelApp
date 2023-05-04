@@ -1,0 +1,19 @@
+<div class="login">
+    <div class="wrapper">
+        <div class="background-circle">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <form class="login-form" @submit.prevent="submitForm" data-form>
+            <h3 class="title">ACCEDI</h3>
+    
+            <label class="text" for="email">email</label>
+            <InputText required v-model="formData.email" class="input-field" type="text" name="email" id="email" placeholder="Email" />
+    
+            <label class="text" for="password">Password</label>
+            <InputText required v-model="formData.password" class="input-field" type="password" name="password" id="password" placeholder="Password" />
+
+            <button class="submit">Log In</button>
+        </form>
+    </div>
+</div>

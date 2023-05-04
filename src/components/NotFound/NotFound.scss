@@ -1,0 +1,58 @@
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+    .wrapper {
+      @include responsiveWidth(1800);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 20px;
+  
+      .jumbo-title {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        line-height: 120%;
+        @include responsiveFontSize(375, 100, 48);
+        margin-bottom: 20px;
+        color: $primary;
+      }
+  
+      .description {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        line-height: 120%;
+        @include responsiveFontSize(375, 18, 16);
+        margin-bottom: 15px;
+        color: #666;
+      }
+  
+      .button {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px;
+        cursor: pointer;
+        max-width: max-content;
+        text-decoration: none !important;
+  
+        &.primary {
+          border: 1px solid $secondary;
+          background: $secondary;
+          color: #fff;
+        }
+  
+        &:hover {
+          &.primary {
+            border: 1px solid $secondary;
+            background: #fff;
+            color: $secondary;
+          }
+        }
+      }
+    }
+  }
+  

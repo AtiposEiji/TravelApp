@@ -1,0 +1,25 @@
+/*
+    #region PALETTE-COLORS
+    These are the variables the compose the palette of the website, usually the ones that have to be chosen are
+    the first three colors, the others are general colors
+*/
+
+/* #region Website colors - the main brand color*/
+$primary: #eb600a;
+$secondary: #8ba4d3;
+/* #endregion Website colors - the main brand color*/
+/* #region Neutral colors - for all kinds of grayish elements*/
+$extralightgrey: #CCC;
+$lightgrey: #999999;
+$grey: #666666;
+$darkgrey: #444444;
+$extradarkgrey: #333333;
+/* #endregion Neutral colors - for all kinds of grayish elements*/
+/* #region Meaningful colors - for the accomplished goals and other successful operations and use it when you have to warn a user */
+$danger: #ff0000;
+$success: #00B74A;
+/* #endregion Meaningful colors - for the accomplished goals and other successful operations and use it when you have to warn a user */
+/* #region Black and white*/
+$white: #ffffff;
+$black: #000000;
+/* #endregion Black and white*/
