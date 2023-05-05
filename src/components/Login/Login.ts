@@ -18,9 +18,7 @@ export default defineComponent({
     });
 
     if (Cookies.get("authToken")) {
-      router.push("/admin-dashboard");
-    } else if (sessionStorage.getItem("isLoggedIn")) {
-      router.push("/admin-dashboard");
+      router.push("/dashboard");
     }
 
     const submitForm = async () => {
@@ -29,6 +27,8 @@ export default defineComponent({
       if (response.status === 200) {
         const token = response.data.token;
         Cookies.set("authToken", `${token}`);
+        //@ts-ignore
+        Cookies.set("userEmail", `${formData.email}`);
         router.push("/dashboard");
       } else {
         return;

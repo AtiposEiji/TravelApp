@@ -15,8 +15,8 @@ router.patch("/resetPassword/:token", resetPassword);
 // Protect all routes after this middleware 
 router.use(protect);
 
-router.use("/:userId/folders", folderRoutes);
-router.use("/:userId/folders/:folderId/locations", locationRoutes);
+router.use("/:userEmail/folders", folderRoutes);
+router.use("/:userEmail/folders/:folderId/locations", locationRoutes);
 
 router.patch("/updateMyPassword", updatePassword);
 router.get("/me", getMe, getUser);

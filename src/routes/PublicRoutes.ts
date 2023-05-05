@@ -2,6 +2,7 @@ import { RouteRecordRaw } from "vue-router";
 import NotFound from "../components/NotFound/index.vue";
 import Login from "../components/Login/index.vue";
 import Dashboard from "../views/Dashboard/index.vue";
+import FolderDetail from "../components/Folder/Detail/index.vue";
 
 export const PublicRoutes: Array<RouteRecordRaw> = [
     {
@@ -29,6 +30,11 @@ export const PublicRoutes: Array<RouteRecordRaw> = [
         path: '/dashboard',
         component: Dashboard,
         name: 'Dashboard'
+    },
+    {
+        path: '/folders/:folderId',
+        component: FolderDetail,
+        name: 'FolderDetail'
     }
 ]
 

@@ -1,0 +1,70 @@
+.location-list {
+  .wrapper {
+    @include responsiveWidth(1800);
+    padding: 0 20px;
+    margin: 0 auto;
+
+    .location-card-box {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      @media (max-width: 1280px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width: 1024px) {
+        display: block;
+      }
+
+      .headers {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-top: 1px solid $extralightgrey;
+        border-left: 1px solid $extralightgrey;
+        border-right: 1px solid $extralightgrey;
+        background: $secondary;
+        padding: 20px;
+        margin-bottom: 20px;
+
+        p {
+          font-family: $secondary-font;
+          font-style: normal;
+          font-weight: 400;
+          @include responsiveFontSize(375, 32, 28);
+          line-height: 120%;
+          color: $white;
+        }
+      }
+
+      .folder {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border: 1px solid $extralightgrey;
+        border-radius: 10px;
+        padding: 30px;
+        cursor: pointer;
+
+        @media (max-width: 1024px) {
+          margin-bottom: 20px;
+        }
+
+        &:hover {
+          background: $primary;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
+
+        .text {
+          font-family: $primary-font;
+          font-style: normal;
+          font-weight: 400;
+          @include responsiveFontSize(375, 20, 16);
+          line-height: 120%;
+          color: $black;
+        }
+      }
+    }
+  }
+}

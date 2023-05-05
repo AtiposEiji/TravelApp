@@ -1,0 +1,27 @@
+<div class="location-list">
+    <div class="wrapper">
+        <div class="location-card-box" v-if="currentLocations">
+            <div class="headers">
+                <p>NOME</p>
+                <p>DESCRIZIONE</p>
+                <p>TAG</p>
+                <p>VISITATO</p>
+            </div>
+            <router-link class="folder" v-for="location in currentLocations" :key="location.id" :data-id="location.id"
+                :to="`/locations/${location.id}`">
+                <p class="text">
+                    {{ location.name }}
+                </p>
+                <p class="text">
+                    {{ location.description }}
+                </p>
+                <p class="text">
+                    {{ location.visited }}
+                </p>
+                <p class="text">
+                    {{ location.tag }}
+                </p>
+            </router-link>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 const catchAsync = require("../../Utils/CatchAsync");
 const appError = require("../../Utils/AppError");
 const APIFeatures = require("../../Utils/APIFeatures");
+const User = require("../../Models/User/UserModel")
 
 exports.deleteOne = Model => catchAsync(async (req, res, next) => {
     const doc = await Model.findByIdAndDelete(req.params.id);
@@ -61,8 +62,17 @@ exports.getOne = (Model, popOptions) => catchAsync(async (req, res, next) => {
 exports.getAll = Model => catchAsync(async (req, res, next) => {
     // To allow for nested GET users on location
     let filter = {};
-    if(req.params.userId){
-        filter.user = req.params.userId
+    // Find user from email end return id.
+    if(req.params.userEmail){
+        console.log(req.params.userEmail)
+        const user = await User.findOne({ email: req.params.userEmail });
+        if (!user) {
+            return res.status(404).json({
+                status: 'fail',
+                message: 'Utente non trovato',
+            });
+        }
+        filter.user = user._id;
     }
     if(req.params.folderId){
         filter.folder = req.params.folderId

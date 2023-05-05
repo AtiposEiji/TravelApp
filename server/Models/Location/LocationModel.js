@@ -65,6 +65,18 @@ const locationSchema = new mongoose.Schema({
 locationSchema.index({ slug: 1 });
 locationSchema.index({ location: "2dsphere" }, { unique: true });
 
+locationSchema.methods.toJSON = function () {
+    const obj = this.toObject();
+    return {
+        id: obj._id,
+        name: obj.name,
+        description: obj.description,
+        visited: obj.visited,
+        tag: obj.tag,
+        rating: obj.rating
+    };
+};
+
 
 const Location = mongoose.model("Location", locationSchema);
 
