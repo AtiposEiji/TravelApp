@@ -58,7 +58,8 @@
 
 
     .logo {
-        @include responsiveWidth(180);
+        max-width: 100px;
+        width: 100%;
         grid-row: 1/2;
         grid-column: 1/2;
         position: relative;
@@ -99,7 +100,7 @@
             align-items: center;
 
             &.active {
-                color: #ea600a;
+                color: $primary;
             }
 
             > a {
@@ -112,7 +113,7 @@
                 //desktop only
                 @media(min-width: 1023px) {
                     &:hover {
-                        border-bottom: 10px solid #ea600a;
+                        border-bottom: 10px solid $primary;
                     }
                 }
             }
@@ -133,7 +134,7 @@
                 }
 
                 path {
-                    fill: #ea600a;
+                    fill: $primary;
                 }
             }
 
@@ -186,7 +187,7 @@
         justify-content: center;
         height: 100%;
         width: 100px;
-        background: #ea600a;
+        background: $primary;
         cursor: pointer;
 
         @media(max-width:1480px) {

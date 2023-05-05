@@ -1,7 +1,12 @@
 <div class="folder-list">
     <div class="wrapper">
-        <p v-for="folder in currentFolders" :key="folder.id" :data-id="folder.id">
-            {{ folder.name }}
-        </p>
+        <div class="folder-card-box" v-if="currentFolders">
+            <div class="folder" v-for="folder in currentFolders" :key="folder.id" :data-id="folder.id">
+                <TravelSVG />
+                <p class="name">
+                    {{ folder.name }}
+                </p>
+            </div>
+        </div>
     </div>
 </div>

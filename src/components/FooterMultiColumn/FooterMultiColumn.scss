@@ -25,10 +25,9 @@
         .logo {
             grid-column: 1/2;
             grid-row: 1/2;
-            @include responsiveWidth(196);
+            @include responsiveWidth(120);
             min-height: 45px;
             display: block;
-            margin-bottom: 30px;
 
             @media (max-width: 1024px) {
                 margin-bottom: 40px;

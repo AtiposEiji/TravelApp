@@ -8,7 +8,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "./src/assets/scss/generic-resets.scss"; @import "./src/assets/scss/specific-resets.scss";; @import "./src/assets/scss/responsive-layout"; @import "./src/assets/scss/palette-colors";`,
+        additionalData: `@import "./src/assets/scss/generic-resets.scss"; @import "./src/assets/scss/specific-resets.scss"; @import "./src/assets/scss/font-style"; @import "./src/assets/scss/responsive-layout"; @import "./src/assets/scss/palette-colors";`,
       }
     }
   },

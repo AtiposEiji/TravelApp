@@ -1,0 +1,41 @@
+.folder-list {
+  .wrapper {
+    @include responsiveWidth(1800);
+    padding: 0 20px;
+    margin: 0 auto;
+
+    .folder-card-box {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 60px;
+
+      .folder {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $extralightgrey;
+        border-radius: 10px;
+        padding: 30px;
+        cursor: pointer;
+
+        &:hover{
+            background: $primary;
+        }
+
+        svg{
+            margin-bottom: 20px;;
+        }
+
+        .name {
+            font-family: $primary-font;
+            font-style: normal;
+            font-weight: 400;
+            @include responsiveFontSize(375, 26, 20);
+            line-height: 120%;
+            color: $black;
+        }
+      }
+    }
+  }
+}

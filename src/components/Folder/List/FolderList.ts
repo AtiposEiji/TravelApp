@@ -4,9 +4,13 @@ import { router } from "../../../routes";
 import { FolderStateModel } from "../../../models/State/FolderStateModel";
 import { GetFolders } from "../../../services/FolderService";
 import { useFolderStoreModule } from "../../../stores/FolderStoreModule";
+import TravelSVG from "../../../svg/Travel/index.vue";
 
 export default defineComponent({
     name: 'FolderList',
+    components: {
+      TravelSVG
+    },
     setup() {
         const foldersStore = useFolderStoreModule();
         const authToken: string | undefined = Cookies.get("authToken");
@@ -19,7 +23,7 @@ export default defineComponent({
 
         const getFolders = (authToken: string | undefined ) => {
             GetFolders("645239296108c111e84fac98", authToken).then(({ data }) => {
-              data.data.data.forEach((element) => {
+              data.data.forEach((element) => {
                 const folder = Object.assign(new FolderStateModel(), element);
                 if (!foldersStore.folders.FolderList.some((x) => x.id === folder.id)) {
                     foldersStore.folders.FolderList.push(folder);

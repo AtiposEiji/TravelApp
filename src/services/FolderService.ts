@@ -1,8 +1,9 @@
 import { AxiosResponse } from "axios";
 import apiClient from "../http-common";
-import { Folder } from "../models/Folder";
+import { FolderResponse } from "../models/Response/FolderResponse";
 
-export const GetFolders = async (userId: string | string[], authToken: string | undefined): Promise<AxiosResponse<Array<Folder>>> => {
+
+export const GetFolders = async (userId: string | string[], authToken: string | undefined): Promise<AxiosResponse<FolderResponse>> => {
     const headers = {
         "content-type": "application/json",
         "Authorization": `Bearer ${authToken}`
@@ -10,7 +11,7 @@ export const GetFolders = async (userId: string | string[], authToken: string | 
     return await apiClient.get(`/api/v1/users/${userId}/folders`, { headers });
 }
 
-export const GetFolder = async (userId: string | string[], folderId: string | string[]): Promise<AxiosResponse<Folder>> => {
+export const GetFolder = async (userId: string | string[], folderId: string | string[]): Promise<AxiosResponse<FolderResponse>> => {
     return await apiClient.get(`/api/v1/users/${userId}/folders/${folderId}`);
 }
 

@@ -28,9 +28,7 @@ exports.updateOne = Model => catchAsync(async (req, res, next) => {
 
     res.status(200).json({
         status: 'success',
-        data: {
-            data: doc
-        }
+        data: doc
     })
 })
 
@@ -38,9 +36,7 @@ exports.postOne = Model => catchAsync(async (req, res, next) => {
     const doc = await Model.create(req.body);
     res.status(201).json({
         status: "success",
-        data: {
-            data: doc
-        }
+        data: doc
     });
 })
 
@@ -58,9 +54,7 @@ exports.getOne = (Model, popOptions) => catchAsync(async (req, res, next) => {
 
     res.status(200).json({
         status: "success",
-        data: {
-            data: doc
-        }
+        data: doc
     });
 })
 
@@ -81,8 +75,6 @@ exports.getAll = Model => catchAsync(async (req, res, next) => {
     res.status(200).json({
         status: "Success",
         results: docList.length,
-        data: {
-            data: docList
-        }
+        data: docList
     });
 })
