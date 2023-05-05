@@ -5,14 +5,12 @@ import { useLocationStoreModule } from "../../../stores/LocationStoreModule";
 import { router } from "../../../routes";
 import { GetLocations } from "../../../services/LocationService";
 import { LocationStateModel } from "../../../models/State/LocationStateModel";
-import DataTable from 'primevue/datatable';
-import Column from 'primevue/column';
+import GoBack from "../../GoBack/index.vue";
 
 export default defineComponent({
     name: 'LocationList',
     components: {
-        DataTable,
-        Column
+        GoBack
     },
     setup() {
         const locationsStore = useLocationStoreModule();
@@ -25,6 +23,7 @@ export default defineComponent({
         }
 
         const getLocations = (authToken: string | undefined) => {
+            locationsStore.locations.LocationList.splice(0, locationsStore.locations.LocationList.length);
             GetLocations(`${userEmail}`, route.params.folderId, authToken).then(({ data }) => {
                 data.data.forEach((element) => {
                     const location = Object.assign(new LocationStateModel(), element);
