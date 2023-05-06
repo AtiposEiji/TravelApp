@@ -17,10 +17,13 @@
                     {{ location.description }}
                 </p>
                 <p class="text">
-                    {{ location.visited }}
-                </p>
-                <p class="text">
                     {{ location.tag }}
+                </p>
+                <p class="text" v-if="location.visited === true">
+                    <TrueSVG />
+                </p>
+                <p class="text" v-else>
+                    <FalseSVG />
                 </p>
             </router-link>
         </div>
