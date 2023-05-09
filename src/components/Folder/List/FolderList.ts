@@ -6,12 +6,14 @@ import { DeleteFolders, GetFolders } from "../../../services/FolderService";
 import { useFolderStoreModule } from "../../../stores/FolderStoreModule";
 import TravelSVG from "../../../svg/Travel/index.vue";
 import TrashSVG from "../../../svg/Trash/index.vue";
+import AddButton from "../../AddButton/index.vue";
 
 export default defineComponent({
   name: 'FolderList',
   components: {
     TravelSVG,
-    TrashSVG
+    TrashSVG,
+    AddButton
   },
   setup() {
     const foldersStore = useFolderStoreModule();

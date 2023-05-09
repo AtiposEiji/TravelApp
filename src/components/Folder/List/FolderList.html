@@ -1,5 +1,6 @@
 <div class="folder-list">
     <div class="wrapper">
+        <AddButton :text="`Aggiungi una nuova destinazione`" :link="`/folder/add`"/>
         <div class="folder-card-box" v-if="currentFolders">
             <router-link class="folder" v-for="folder in currentFolders" :key="folder.id" :data-id="folder.id"
                 :to="`/folders/${folder.id}`">

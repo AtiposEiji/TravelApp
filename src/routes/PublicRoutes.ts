@@ -3,6 +3,7 @@ import NotFound from "../components/NotFound/index.vue";
 import Login from "../components/Login/index.vue";
 import Dashboard from "../views/Dashboard/index.vue";
 import FolderDetail from "../components/Folder/Detail/index.vue";
+import SubmitFormFolder from "../components/SubmitFormFolder/index.vue";
 
 export const PublicRoutes: Array<RouteRecordRaw> = [
     {
@@ -35,6 +36,12 @@ export const PublicRoutes: Array<RouteRecordRaw> = [
         path: '/folders/:folderId',
         component: FolderDetail,
         name: 'FolderDetail'
+    },
+    {
+        path: '/folder/add',
+        component: SubmitFormFolder,
+        name: 'SubmitFormFolder'
     }
+    
 ]
 

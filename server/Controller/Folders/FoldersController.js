@@ -16,8 +16,11 @@ exports.setUserId = (req, res, next) => {
 }
 
 const createOrUpdateFolder = catchAsync(async (req, res, next) => {
-    const { name, location, user } = req.body;
+    let { name, location, user } = req.body;
 
+    // Convert name to uppercase
+    name = name.toUpperCase();
+    
     try {
         const existingFolder = await Folder.findOneAndUpdate(
             { "name": name },

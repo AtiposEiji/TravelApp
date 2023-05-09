@@ -11,6 +11,14 @@ export const GetFolders = async (userEmail: string | string[], authToken: string
     return await apiClient.get(`/api/v1/users/${userEmail}/folders`, { headers });
 }
 
+export const PostFolder = async (formData: Object, authToken: string | undefined) => {
+    const headers = {
+        "content-type": "application/json",
+        "Authorization": `Bearer ${authToken}`
+    };
+    return await apiClient.post(`api/v1/folders`, formData, { headers });
+}
+
 export const DeleteFolders = async (folderId: string | string[], authToken: string | undefined) => {
     const headers = {
         "content-type": "application/json",

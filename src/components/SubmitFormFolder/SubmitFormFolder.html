@@ -1,0 +1,11 @@
+<div class="submit-form">
+    <div class="wrapper">
+        <form class="form" @submit.prevent="submitFolderForm" data-form>
+            <div class="input-container">
+                <label class="text" for="name">NOME CARTELLA</label>
+                <InputText required type="text" v-model="formDataFolder.name" name="name" id="name" placeholder="Inserisci nome cartella" />
+            </div>
+            <Button type="submit" label="Aggiungi" icon="pi pi-check" iconPos="right" class="cta"/>
+        </form>
+    </div>
+</div>
