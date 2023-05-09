@@ -2,14 +2,16 @@ import { computed, defineComponent } from "vue";
 import Cookies from "js-cookie";
 import { router } from "../../../routes";
 import { FolderStateModel } from "../../../models/State/FolderStateModel";
-import { GetFolders } from "../../../services/FolderService";
+import { DeleteFolders, GetFolders } from "../../../services/FolderService";
 import { useFolderStoreModule } from "../../../stores/FolderStoreModule";
 import TravelSVG from "../../../svg/Travel/index.vue";
+import TrashSVG from "../../../svg/Trash/index.vue";
 
 export default defineComponent({
   name: 'FolderList',
   components: {
-    TravelSVG
+    TravelSVG,
+    TrashSVG
   },
   setup() {
     const foldersStore = useFolderStoreModule();
@@ -31,10 +33,19 @@ export default defineComponent({
       });
     };
 
+    const deleteFolder = async (event: any) => {
+      const folderId = event.currentTarget.getAttribute('data-id');
+      if(folderId){
+        await DeleteFolders(folderId, authToken);
+        foldersStore.folders.FolderList = foldersStore.folders.FolderList.filter((folder) => folder.id !== folderId);
+      }
+    }
+
     getFolders(authToken);
 
     return {
-      currentFolders: computed(() => foldersStore.folders.FolderList)
+      currentFolders: computed(() => foldersStore.folders.FolderList),
+      deleteFolder
     }
   }
 });

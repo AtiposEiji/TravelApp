@@ -37,7 +37,15 @@
         }
 
         svg{
-            margin-bottom: 20px;;
+            margin-bottom: 20px;
+
+            &.trash{
+              margin-left: auto;
+
+              &:hover{
+                fill: $danger;
+              }
+            }
         }
 
         .name {
@@ -47,6 +55,7 @@
             @include responsiveFontSize(375, 26, 20);
             line-height: 120%;
             color: $black;
+            text-transform: uppercase;
         }
       }
     }

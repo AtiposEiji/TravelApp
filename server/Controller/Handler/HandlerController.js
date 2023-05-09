@@ -2,6 +2,7 @@ const catchAsync = require("../../Utils/CatchAsync");
 const appError = require("../../Utils/AppError");
 const APIFeatures = require("../../Utils/APIFeatures");
 const User = require("../../Models/User/UserModel")
+const Location = require("../../Models/Location/LocationModel")
 
 exports.deleteOne = Model => catchAsync(async (req, res, next) => {
     const doc = await Model.findByIdAndDelete(req.params.id);
@@ -9,6 +10,9 @@ exports.deleteOne = Model => catchAsync(async (req, res, next) => {
     if (!doc) {
         return next(new appError("No document found with that ID", 404))
     }
+
+    // Remove the folder from the folder array of the associated Location object
+    await Location.updateMany({ folder: req.params.id }, { $pull: { folder: req.params.id } });
 
     return res.status(204).json({
         status: 'success',

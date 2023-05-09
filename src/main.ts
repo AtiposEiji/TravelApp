@@ -6,6 +6,7 @@ import { useSkeletorStoreModule } from "./stores/SkeletorStoreModule";
 import App from './App.vue'
 import PrimeVue from 'primevue/config'
 import ToastService from 'primevue/toastservice';
+import ConfirmationService from 'primevue/confirmationservice';
 import './style.css' 
 import 'vue-skeletor/dist/vue-skeletor.css';
 import 'primevue/resources/themes/tailwind-light/theme.css'       //theme
@@ -15,7 +16,7 @@ import 'primeicons/primeicons.css';                          //icons
 const app = createApp(App);
 const pinia = createPinia();
 
-app.use(pinia).use(PrimeVue).use(router).use(ToastService).mount('#app')
+app.use(pinia).use(PrimeVue).use(router).use(ToastService).use(ConfirmationService).mount('#app')
 app.component(Skeletor.name, Skeletor);
 
 const skeletor = useSkeletorStoreModule();
