@@ -7,14 +7,14 @@ import { PostFolder } from "../../services/FolderService";
 import GoBack from "../GoBack/index.vue";
 
 export default defineComponent({
-    name: 'SubmitFormFolder',
+    name: 'SubmitFormLocation',
     components: {
         GoBack,
         InputText,
         Button
     },
     setup() {
-        const formDataFolder = ref({
+        const formDataLocation = ref({
             name: "",
         });
         const authToken: string | undefined = Cookies.get('authToken');
@@ -25,15 +25,15 @@ export default defineComponent({
             }
         }
 
-        const submitFolderForm = async () => {
-            const folderData = JSON.parse(JSON.stringify(formDataFolder.value));
+        const submitLocationForm = async () => {
+            const folderData = JSON.parse(JSON.stringify(formDataLocation.value));
             await PostFolder(folderData, authToken);
             router.push("/dashboard");
         };
 
         return {
-            submitFolderForm,
-            formDataFolder
+            submitFolderForm: submitLocationForm,
+            formDataFolder: formDataLocation
         }
     }
 });

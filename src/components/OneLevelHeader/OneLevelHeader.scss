@@ -92,7 +92,7 @@
             font-family: "Inter", sans-serif;
             font-style: normal;
             font-weight: 700;
-            @include responsiveFontSize(375, 20, 16);
+            @include responsiveFontSize(20, 16);
             line-height: 120%;
             color: #000;
             margin-right: calc(100vw / (1920 / 40));
@@ -170,7 +170,7 @@
                     align-items: center;
                     padding: 15px 20px;
                     border-bottom: 1px solid #DDDDDD;
-                    @include responsiveFontSize(375, 16, 16);
+                    @include responsiveFontSize(16, 16);
 
                     &:last-child {
                         border-bottom: unset;

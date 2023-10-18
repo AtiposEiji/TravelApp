@@ -41,7 +41,7 @@
                 font-family: "Roboto", sans-serif;
                 font-style: normal;
                 font-weight: 700;
-                @include responsiveFontSize(375, 16, 16);
+                @include responsiveFontSize(16, 16);
                 line-height: 140%;
                 color: #999999;
                 margin-bottom: 15px;
@@ -66,14 +66,14 @@
             p {
                 font-family: "Roboto", sans-serif;
                 font-weight: normal;
-                @include responsiveFontSize(375, 16, 16);
+                @include responsiveFontSize(16, 16);
                 line-height: 160%;
                 color: #666;
 
                 strong {
                     font-style: normal;
                     font-weight: 700;
-                    @include responsiveFontSize(375, 16, 16);
+                    @include responsiveFontSize(16, 16);
                     line-height: 171%;
                     color: #666;
                 }
@@ -84,7 +84,7 @@
                 font-family: "Roboto", sans-serif;
                 font-style: normal;
                 font-weight: normal;
-                @include responsiveFontSize(375, 16, 16);
+                @include responsiveFontSize(16, 16);
                 line-height: 160%;
                 color: #666;
                 width: fit-content;
@@ -176,7 +176,7 @@
                     font-family: "Roboto", sans-serif;
                     font-style: normal;
                     font-weight: normal;
-                    @include responsiveFontSize(375, 16, 16);
+                    @include responsiveFontSize(16, 16);
                     line-height: 200%;
                     color: #666;
                     width: fit-content;
@@ -207,7 +207,7 @@
                 font-family: "Roboto", sans-serif;
                 font-style: normal;
                 font-weight: normal;
-                @include responsiveFontSize(375, 16, 16);
+                @include responsiveFontSize(16, 16);
                 line-height: 200%;
                 color: #666;
                 grid-column: 2/3;
@@ -241,7 +241,7 @@
                     font-family: "Roboto", sans-serif;
                     font-style: normal;
                     font-weight: normal;
-                    @include responsiveFontSize(375, 16, 16);
+                    @include responsiveFontSize(16, 16);
                     line-height: 200%;
                     color: #666;
                     margin-right: 10px;
@@ -268,7 +268,7 @@
                     font-family: "Roboto", sans-serif;
                     font-style: normal;
                     font-weight: normal;
-                    @include responsiveFontSize(375, 16, 16);
+                    @include responsiveFontSize(16, 16);
                     line-height: 200%;
                     color: #666;
 

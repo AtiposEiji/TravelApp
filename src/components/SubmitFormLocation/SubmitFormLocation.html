@@ -1,10 +1,10 @@
 <div class="submit-form">
     <div class="wrapper">
         <GoBack />
-        <form class="form" @submit.prevent="submitFolderForm" data-form>
+        <form class="form" @submit.prevent="submitLocationForm" data-form>
             <div class="input-container">
                 <label class="text" for="name">NOME CARTELLA</label>
-                <InputText required type="text" v-model="formDataFolder.name" name="name" id="name" placeholder="Inserisci nome cartella" />
+                <InputText required type="text" v-model="formDataLocation.name" name="name" id="name" placeholder="Inserisci nome cartella" />
             </div>
             <Button type="submit" label="Aggiungi" icon="pi pi-check" iconPos="right" class="cta"/>
         </form>

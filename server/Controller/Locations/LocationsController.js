@@ -41,7 +41,7 @@ const createOrUpdateLocation = catchAsync(async (req, res, next) => {
         } else {
             // The location didn't exist and has been created with the given values
             const slug = slugify(name, { lower: true });
-            const newLocation = await Location.create({ name, slug, description, visited, tag, rating, location, user });
+            const newLocation = await Location.create({ name, slug, description, visited, tag, rating, location, folder, user });
             res.status(201).json({ message: "Location created", location: newLocation });
         }
     } catch (err) {
