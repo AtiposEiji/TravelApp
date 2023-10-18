@@ -1,7 +1,7 @@
 <div class="location-list">
     <div class="wrapper">
         <GoBack />
-        <AddButton :text="`Aggiungi una nuova location`" :link="`/location/add`"/>
+        <AddButton :text="`Aggiungi una nuova location`" :link="`/folder/${folderId}/location/add`"/>
         <div class="location-card-box" v-if="currentLocations">
             <div class="headers">
                 <p>NOME</p>

@@ -5,7 +5,6 @@ import Dashboard from "../views/Dashboard/index.vue";
 import FolderDetail from "../components/Folder/Detail/index.vue";
 import SubmitFormFolder from "../components/SubmitFormFolder/index.vue";
 import SubmitFormLocation from "../components/SubmitFormLocation/index.vue";
-
 export const PublicRoutes: Array<RouteRecordRaw> = [
     {
         path: '/:catchAll(.*)',
@@ -44,9 +43,9 @@ export const PublicRoutes: Array<RouteRecordRaw> = [
         name: 'SubmitFormFolder'
     },
     {
-        path: '/folders/:folderId/location/add',
+        path: '/folder/:folderId/location/add',
         component: SubmitFormLocation,
-        name: 'SubmitFormFolder'
+        name: 'SubmitFormLocation'
     }
 ]
 
