@@ -43,8 +43,7 @@ export default defineComponent({
         getLocations(authToken);
 
         return {
-            currentLocations: computed(() => locationsStore.locations.LocationList),
-            folderId: route.params.folderId
+            currentLocations: computed(() => locationsStore.locations.LocationList)
         }
     }
 });
