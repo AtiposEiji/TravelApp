@@ -8,13 +8,11 @@ import { LocationStateModel } from "../../../models/State/LocationStateModel";
 import GoBack from "../../GoBack/index.vue";
 import TrueSVG from "../../../svg/True/index.vue";
 import FalseSVG from "../../../svg/False/index.vue";
-import AddButton from "../../AddButton/index.vue";
 
 export default defineComponent({
     name: 'LocationList',
     components: {
         GoBack,
-        AddButton,
         TrueSVG,
         FalseSVG
     },

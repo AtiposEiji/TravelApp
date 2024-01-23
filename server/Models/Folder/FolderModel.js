@@ -12,11 +12,11 @@ const folderSchema = new mongoose.Schema({
         ref: "Location",
         required: [true, "Location must belong to a folder"]
     }],
-    user: {
+    user: [{
         type: mongoose.Schema.ObjectId,
         ref: "User",
         required: [true, "User must belong to a folder"]
-    }
+    }]
 }, {
     toJSON: {
         virtuals: true

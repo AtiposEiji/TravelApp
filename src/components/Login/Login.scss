@@ -1,6 +1,6 @@
 .login {
   background-color: #080710;
-  padding: clampFluidResponsive(300, 20);
+  padding: clampFluidResponsive(375, 300, 20);
 
   .wrapper {
     display: grid;
@@ -69,7 +69,7 @@
       padding: 50px 35px;
 
       .title {
-        @include responsiveFontSize(32, 26);
+        @include responsiveFontSize(375, 32, 26);
         font-weight: 500;
         line-height: 42px;
         text-align: center;
@@ -78,7 +78,7 @@
       .text {
         display: block;
         margin-top: 30px;
-        @include responsiveFontSize(16, 14);
+        @include responsiveFontSize(375, 16, 14);
         font-weight: 500;
       }
 
@@ -90,7 +90,7 @@
         border-radius: 3px;
         padding: 0 10px;
         margin-top: 8px;
-        @include responsiveFontSize(14, 14);
+        @include responsiveFontSize(375, 14, 14);
         font-weight: 300;
         color: #e5e5e5;
 
@@ -113,7 +113,7 @@
         background-color: $white;
         color: #080710;
         padding: 15px 0;
-        @include responsiveFontSize(18, 16);
+        @include responsiveFontSize(375, 18, 16);
         font-weight: 600;
         border-radius: 5px;
         cursor: pointer;

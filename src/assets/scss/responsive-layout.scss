@@ -1,13 +1,13 @@
 /*
     - Use responsiveWidth to make the width fluid. Es.:  responsiveWidth(1600) where 1600 is the width of the container;
-    - Use responsiveFontSize to make the font fluid. Es.:  responsiveFontSize(20, 16) where: - 375 is the viewport of the responsive;
+    - Use responsiveFontSize to make the font fluid. Es.:  responsiveFontSize(375, 20, 16) where: - 375 is the viewport of the responsive;
                                                                                                               - 20 is the desktop font size;
                                                                                                               - 16 is the mobile font size;   
 */
 
 $fullWidth: 1920;
-$mobileWidth: 375;
 $basePX: 16;
+
 
 @function calcVW($maxPX) {
     @return calc(($maxPX / $fullWidth) * 100) + unquote("vw");
@@ -24,26 +24,26 @@ $basePX: 16;
 }
 
 //to be used on margins, paddings over 35px
-@function clampFluidResponsive($sizeDesktop, $sizeMobile, $minViewportWidth: 375) {
+@function clampFluidResponsive($minViewportWidth, $sizeDesktop, $sizeMobile) {
     $strippedSizeDesktop: strip-unit($sizeDesktop);
     $strippedSizeMobile: strip-unit($sizeMobile);
 
-    $ZZ: calc($sizeMobile / $basePX) + unquote("rem");
-    $XX: calc($minViewportWidth / 100) + unquote("px");
+
+    $ZZ: calc($sizeMobile/$basePX) + unquote("rem");
+    $XX: calc($minViewportWidth/100) + unquote("px");
     $YY: calc(100 * ($sizeDesktop - $sizeMobile) / ($fullWidth - $minViewportWidth));
+    $sizeDesktop: $sizeDesktop + unquote("px");
+    $sizeMobile: $sizeMobile + unquote("px");
 
-    $minValue: if($sizeDesktop > $sizeMobile, ($sizeMobile + unquote("px")), ($sizeDesktop + unquote("px")));
-    $maxValue: if($sizeDesktop > $sizeMobile, ($sizeDesktop + unquote("px")), ($sizeMobile + unquote("px")));
-
-    @return clamp($minValue, calc($ZZ + (1vw - $XX) * $YY), $maxValue);
+    @return clamp($sizeMobile, calc($ZZ + (1vw - $XX) * $YY), $sizeDesktop);
 }
 
 
 //to be used for fonts
-@mixin responsiveFontSize($fontSizeDesktop, $fontSizeMobile, $minViewportWidth: 375) {
+@mixin responsiveFontSize($minViewportWidth, $fontSizeDesktop, $fontSizeMobile) {
     font-size: calcVW($fontSizeDesktop);
 
     @media (max-width: 1920px) {
-        font-size: clampFluidResponsive($fontSizeDesktop, $fontSizeMobile, $minViewportWidth);
+        font-size: clampFluidResponsive($minViewportWidth, $fontSizeDesktop, $fontSizeMobile);
     }
 }

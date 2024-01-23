@@ -15,7 +15,7 @@
         font-family: "Roboto", sans-serif;
         font-weight: 700;
         line-height: 120%;
-        @include responsiveFontSize(100, 48);
+        @include responsiveFontSize(375, 100, 48);
         margin-bottom: 20px;
         color: $primary;
       }
@@ -24,7 +24,7 @@
         font-family: "Inter", sans-serif;
         font-weight: 400;
         line-height: 120%;
-        @include responsiveFontSize(18, 16);
+        @include responsiveFontSize(375, 18, 16);
         margin-bottom: 15px;
         color: #666;
       }

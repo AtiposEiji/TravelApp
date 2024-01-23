@@ -8,7 +8,7 @@
     font-family: "Inter", sans-serif;
     font-weight: 400;
     line-height: 120%;
-    @include responsiveFontSize(16, 14);
+    @include responsiveFontSize(375, 16, 14);
     cursor: pointer;
     margin: 40px auto;
 

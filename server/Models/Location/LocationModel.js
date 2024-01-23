@@ -43,16 +43,16 @@ const locationSchema = new mongoose.Schema({
         },
         coordinates: [Number]
     },
-    folder: {
+    folder: [{
         type: mongoose.Schema.ObjectId,
         ref: "Folder",
         required: [true, "Location must belong to a folder"]
-    },
-    user: {
+    }],
+    user: [{
         type: mongoose.Schema.ObjectId,
         ref: "User",
         required: [true, "Location must belong to an user"]
-    }
+    }]
 }, {
     toJSON: {
         virtuals: true

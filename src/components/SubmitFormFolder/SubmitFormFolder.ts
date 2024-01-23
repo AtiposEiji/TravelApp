@@ -4,12 +4,10 @@ import { defineComponent, ref } from "vue";
 import { router } from "../../routes";
 import Cookies from "js-cookie";
 import { PostFolder } from "../../services/FolderService";
-import GoBack from "../GoBack/index.vue";
 
 export default defineComponent({
     name: 'SubmitFormFolder',
     components: {
-        GoBack,
         InputText,
         Button
     },
